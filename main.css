@@ -1,0 +1,156 @@
+:root{
+    --primary:#16b12a;
+    --secondary:#e92626;
+    --dark:#691414;
+    --light:#f3f3f3;
+}
+
+*{
+    margin:0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Mountains of Christmas';
+    font-size: 32px;
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.card{
+    margin: 100px auto 0;
+    width: 400px;
+    height: 600px;
+    perspective: 800px;
+}
+
+.card-flip{
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+
+.card-flip.is-fliped{
+    transform: rotateY(180deg);
+}
+
+.card-side{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.card-side-front{
+    background-image: radial-gradient(var(--secondary), var(--dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.snow{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url(assets/1.png), url(assets/2.png), url(assets/3.png);
+    animation:animate 20s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        background-position:  0 0,0 0 ,0 0;
+    }
+    100%{
+        background-position:  500px 1000px, 400px 400px ,300px 300px;
+    }
+}
+
+.card-side-front h2{
+    color: var(--primary);
+    font-size: 45px;
+    font-weight: 600;
+    align-self: flex-end;
+}
+
+.card-side-front h4{
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 3%;
+    align-self: flex-start;
+}
+
+.card-side-back{
+    background-color: var(--light);
+    transform: rotateY(180deg);
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+}
+
+.header{
+    position: relative;
+    padding: 10px 30px 40px;
+}
+
+.header:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 0 0 50% 0;
+    background-image: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary) 115%);
+}
+
+.pp{
+    display: block;
+    width: 128px;
+    height: 128px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    object-fit: cover;
+}
+
+
+.header h2{
+    color: #fff;
+    font-size: 45px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.card-body{
+    padding: 30px;
+}
+
+.card-body h3{
+    color: var(--dark);
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom:15px;
+}
+
+.card-body p{
+    color: var(--dark);
+    font-size:18px;
+    line-height: 1.5;
+}
