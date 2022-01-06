@@ -57,6 +57,14 @@ body{
 
 }
 
+.magic{
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotate(-20deg);
+    margin-top: -30%;
+}
+
 .snow{
     display: grid;
     place-items: center;
@@ -116,14 +124,16 @@ body{
     bottom: 0;
     z-index: -1;
     border-radius: 0 0 50% 0;
-    background-image: linear-gradient(to bottom left, var(--primary) 10%, var(--secondary) 115%);
+    background-image: linear-gradient(to right top, var(--secondary), var(--dark));
+
+
 }
 
 .pp{
     display: block;
     width: 128px;
     height: 128px;
-    margin: 0 auto 30px;
+    margin: 10px auto 30px;
     border-radius: 50%;
     border: 5px solid #fff;
     object-fit: cover;
